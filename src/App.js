@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously } from 'firebase/auth';
+// import { getAuth, signInAnonymously } from 'firebase/auth'; // Removed unused import
 import { getFirestore } from 'firebase/firestore';
-import { Search, Plus, Trash2, Bell, Sun, Moon, ExternalLink, Sparkles, X, LoaderCircle } from 'lucide-react';
+import { Bell, Sun, Moon, Sparkles, X, LoaderCircle } from 'lucide-react'; // Removed unused icons
 
 // --- Firebase Configuration ---
 // This is a placeholder. In a real environment, use secure environment variables.
@@ -16,9 +16,11 @@ const firebaseConfig = {
 };
 
 // --- Initialize Firebase ---
+// NOTE: auth and db are initialized but not used in this mock version.
+// In a real app, you would use these to interact with Firebase services.
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+// const auth = getAuth(app); // Removed unused variable
+// const db = getFirestore(app); // Removed unused variable
 
 // --- Mock Financial Data API ---
 const lotSizes = {
@@ -200,7 +202,7 @@ export default function App() {
     const [theme, setTheme] = useState('dark');
     const [activeTab, setActiveTab] = useState('alerts');
     const [fmiData, setFmiData] = useState({ long_pct: 50, short_pct: 50, nifty_signal: 'Neutral', last_update: new Date().toISOString() });
-    const [stats, setStats] = useState({ nifty: '0.00', nifty_change: '+0.00 (+0.00%)', supply: 0, demand: 0, watchlist: 0 });
+    const [stats, setStats] = useState({ nifty: '0.00', nifty_change: '+0.00 (+0.00%)' });
     const [alerts, setAlerts] = useState([]);
     const [watchlist, setWatchlist] = useState([]);
     const [supplyZones, setSupplyZones] = useState([]);
