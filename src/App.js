@@ -355,7 +355,7 @@ export default function App() {
 }
 
 //Step 2: Update Your package.json File
-Now, go to your package.json file on GitHub. Edit it and replace its contents with the code below. The key change is adding CI=false to the "build" script. This tells Netlify to ignore warnings and not treat them as errors.
+//Now, go to your package.json file on GitHub. Edit it and replace its contents with the code below. The key change is adding CI=false to the "build" script. This tells Netlify to ignore warnings and not treat them as errors.
 
 {
   "name": "fifto-react-app",
